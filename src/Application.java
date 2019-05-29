@@ -1,19 +1,18 @@
 import java.util.Arrays;
 
-public class Main {
+public class Application {
 
   public static void main(String[] args) {
     double startTime = System.nanoTime();
     Robot robot = new Robot(4, -2, Robot.Direction.UP);
     robot.moveRobot(robot, 2, 2);
-
-    System.out.println();
+    System.out.println("Next:");
     ComplexNumber numberA = new ComplexNumber(2.2, 2.2);
     ComplexNumber numberB = new ComplexNumber(2.2, 2.2);
     System.out.println(numberA.equals(numberB));
-
+    System.out.println("Next:");
     printTextPerRole();
-
+    System.out.println("Next:");
     System.out.println(mergeArrays(new int[]{4, 6, 2}, new int[]{1, 3, 7, 5}));
 
     double timeSpent = (System.nanoTime() - startTime) / 1000000;
