@@ -3,7 +3,6 @@ import java.util.Arrays;
 public class Application {
 
   public static void main(String[] args) {
-    double startTime = System.nanoTime();
     Robot robot = new Robot(4, -2, Robot.Direction.UP);
     robot.moveRobot(robot, 2, 2);
     System.out.println("Next:");
@@ -14,8 +13,6 @@ public class Application {
     printTextPerRole();
     System.out.println("Next:");
     System.out.println(mergeArrays(new int[]{4, 6, 2}, new int[]{1, 3, 7, 5}));
-    double timeSpent = (System.nanoTime() - startTime) / 1000000;
-    System.out.println("программа выполнялась " + timeSpent + " миллисекунд");
   }
 
   private static void printTextPerRole() {
@@ -25,12 +22,12 @@ public class Application {
     StringBuilder finalBuilderForPrint = new StringBuilder();
     String[] rolesPool = {"Городничий", "Аммос Федорович", "Артемий Филиппович", "Лука Лукич"};
     String[] textLinesPool = {"Городничий: Я пригласил вас, господа, Городничий: с тем, Городничий чтобы сообщить вам пренеприятное известие: к нам едет ревизор.\n",
-            "Аммос Федорович: Как ревизор?\n",
-            "Артемий Филиппович: Как ревизор?\n",
-            "Городничий: Ревизор из Петербурга, инкогнито. И еще с секретным предписаньем.\n",
-            "Аммос Федорович: Вот те на!\n",
-            "Артемий Филиппович: Вот не было заботы, так подай!\n",
-            "Лука Лукич: Господи боже! еще и с секретным предписаньем!\n"};
+                              "Аммос Федорович: Как ревизор?\n",
+                              "Артемий Филиппович: Как ревизор?\n",
+                              "Городничий: Ревизор из Петербурга, инкогнито. И еще с секретным предписаньем.\n",
+                              "Аммос Федорович: Вот те на!\n",
+                              "Артемий Филиппович: Вот не было заботы, так подай!\n",
+                              "Лука Лукич: Господи боже! еще и с секретным предписаньем!\n"};
 
     for (String roles : rolesPool) {
       tempRolesBuilder.delete(0, tempRolesBuilder.length());
