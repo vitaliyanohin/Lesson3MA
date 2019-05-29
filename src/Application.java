@@ -21,13 +21,13 @@ public class Application {
     StringBuilder tempTextLinesBuilder = new StringBuilder();
     StringBuilder finalBuilderForPrint = new StringBuilder();
     String[] rolesPool = {"Городничий", "Аммос Федорович", "Артемий Филиппович", "Лука Лукич"};
-    String[] textLinesPool = {"Городничий: Я пригласил вас, господа, Городничий: с тем, Городничий чтобы сообщить вам пренеприятное известие: к нам едет ревизор.\n",
-                              "Аммос Федорович: Как ревизор?\n",
-                              "Артемий Филиппович: Как ревизор?\n",
-                              "Городничий: Ревизор из Петербурга, инкогнито. И еще с секретным предписаньем.\n",
-                              "Аммос Федорович: Вот те на!\n",
-                              "Артемий Филиппович: Вот не было заботы, так подай!\n",
-                              "Лука Лукич: Господи боже! еще и с секретным предписаньем!\n"};
+    String[] textLinesPool = {"Городничий: Я пригласил вас, господа, Городничий: с тем, Городничий чтобы сообщить вам пренеприятное известие: к нам едет ревизор.",
+                              "Аммос Федорович: Как ревизор?",
+                              "Артемий Филиппович: Как ревизор?",
+                              "Городничий: Ревизор из Петербурга, инкогнито. И еще с секретным предписаньем.",
+                              "Аммос Федорович: Вот те на!",
+                              "Артемий Филиппович: Вот не было заботы, так подай!",
+                              "Лука Лукич: Господи боже! еще и с секретным предписаньем!"};
 
     for (String roles : rolesPool) {
       tempRolesBuilder.delete(0, tempRolesBuilder.length());
@@ -41,7 +41,7 @@ public class Application {
         if ((tempRolesBuilder.toString()).equals(tempTextLinesBuilder.toString())) {
           count++;
           finalBuilderForPrint.append(count).append(") ");
-          finalBuilderForPrint.append(textLine.substring(textLine.indexOf(":") + 1));
+          finalBuilderForPrint.append(textLine.substring(textLine.indexOf(":") + 1)).append("\n");
         }
       }
     }
