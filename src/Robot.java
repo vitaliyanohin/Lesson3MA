@@ -17,6 +17,10 @@ public class Robot {
     robot.stepForward();
   }
 
+  public enum Direction {
+    UP, DOWN, LEFT, RIGHT
+  }
+
   private Direction lookRightOrLeft() {
     setDirection = (endPointOfTheWayOnAxisX > startingPositionOnAxisX) ? Direction.RIGHT : Direction.LEFT;
     return setDirection;
@@ -58,9 +62,5 @@ public class Robot {
     }
     System.out.println("Моя конечная точка: X = " + startingPositionOnAxisX + " Y = "
             + startingPositionOnAxisY + " Достигнута!");
-  }
-
-  public enum Direction {
-    UP, DOWN, LEFT, RIGHT
   }
 }
