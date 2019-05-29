@@ -14,7 +14,6 @@ public class Application {
     printTextPerRole();
     System.out.println("Next:");
     System.out.println(mergeArrays(new int[]{4, 6, 2}, new int[]{1, 3, 7, 5}));
-
     double timeSpent = (System.nanoTime() - startTime) / 1000000;
     System.out.println("программа выполнялась " + timeSpent + " миллисекунд");
   }
@@ -78,7 +77,3 @@ public class Application {
     return Arrays.toString(finalArray);
   }
 }
-
-
-
-
