@@ -56,7 +56,6 @@ public class Application {
       flagIndexForFirstArray++;
     }
     while (flagIndexForSecondArray < (finalArray.length - firstArray.length)) {
-
       finalArray[flagIndexForFirstArray] = secondArray[flagIndexForSecondArray];
       flagIndexForFirstArray++;
       flagIndexForSecondArray++;
