@@ -32,28 +32,28 @@ public class Robot {
   }
 
   private void stepForward() {
-    if (lookRightOrLeft() == Direction.RIGHT) {
+    if (lookRightOrLeft().equals(Direction.RIGHT)) {
       for (int i = startingPositionOnAxisX; i < endPointOfTheWayOnAxisX; i++) {
         startingPositionOnAxisX++;
         System.out.println("я двигаюсь! По направению: " + Direction.RIGHT + " Ось X  "
                 + startingPositionOnAxisX);
       }
     }
-    if (lookRightOrLeft() == Direction.LEFT) {
+    if (lookRightOrLeft().equals(Direction.LEFT)) {
       for (int i = startingPositionOnAxisX; i > endPointOfTheWayOnAxisX; i--) {
         startingPositionOnAxisX--;
         System.out.println("я двигаюсь! По направению: " + Direction.LEFT + " Ось X  "
                 + startingPositionOnAxisX);
       }
     }
-    if (lookUpOrDown() == Direction.UP) {
+    if (lookUpOrDown().equals(Direction.UP)) {
       for (int i = startingPositionOnAxisY; i < endPointOfTheWayOnAxisY; i++) {
         startingPositionOnAxisY++;
         System.out.println("я двигаюсь! По направению: " + Direction.UP + " Ось Y  "
                 + startingPositionOnAxisY);
       }
     }
-    if (lookUpOrDown() == Direction.DOWN) {
+    if (lookUpOrDown().equals(Direction.DOWN)) {
       for (int i = startingPositionOnAxisY; i > endPointOfTheWayOnAxisY; i--) {
         startingPositionOnAxisY--;
         System.out.println("я двигаюсь! По направению: " + Direction.DOWN + " Ось Y  "

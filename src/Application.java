@@ -3,8 +3,8 @@ import java.util.Arrays;
 public class Application {
 
   public static void main(String[] args) {
-    Robot robot = new Robot(4, -2, Robot.Direction.UP);
-    robot.moveRobot(robot, 2, 2);
+    Robot robot = new Robot(2, 2, Robot.Direction.UP);
+    robot.moveRobot(robot, 4, -2);
     System.out.println("Next:");
     ComplexNumber numberA = new ComplexNumber(2.2, 2.2);
     ComplexNumber numberB = new ComplexNumber(2.2, 2.2);
