@@ -10,16 +10,6 @@ public class Application {
     ComplexNumber numberB = new ComplexNumber(2.2, 2.2);
     System.out.println(numberA.equals(numberB));
     System.out.println("Next:");
-    printTextPerRole();
-    System.out.println("Next:");
-    System.out.println(mergeArrays(new int[]{4, 6, 2}, new int[]{1, 3, 7, 5}));
-  }
-
-  private static void printTextPerRole() {
-    int count = 0;
-    StringBuilder tempRolesBuilder = new StringBuilder();
-    StringBuilder tempTextLinesBuilder = new StringBuilder();
-    StringBuilder finalBuilderForPrint = new StringBuilder();
     String[] rolesPool = {"Городничий", "Аммос Федорович", "Артемий Филиппович", "Лука Лукич"};
     String[] textLinesPool = {
             "Городничий: Я пригласил вас, господа, с тем, чтобы сообщить вам пренеприятное известие: к нам едет ревизор.",
@@ -30,27 +20,39 @@ public class Application {
             "Артемий Филиппович: Вот не было заботы, так подай!",
             "Лука Лукич: Господи боже! еще и с секретным предписаньем!"
     };
+    System.out.println(printTextPerRole(rolesPool, textLinesPool));
+    System.out.println("Next:");
+    System.out.println(Arrays.toString(mergeArrays(new int[]{4, 6, 2}, new int[]{1, 3, 7, 5})));
+  }
 
-    for (String roles : rolesPool) {
+  private static String printTextPerRole(String[] roles, String[] textLines) {
+    int count;
+    StringBuilder tempRolesBuilder = new StringBuilder();
+    StringBuilder tempTextLinesBuilder = new StringBuilder();
+    StringBuilder finalBuilderForPrint = new StringBuilder();
+    for (String roles2 : roles) {
       tempRolesBuilder.delete(0, tempRolesBuilder.length());
-      tempRolesBuilder.append(roles);
-      finalBuilderForPrint.append(roles).append(":").append("\n");
+      tempRolesBuilder.append(roles2);
+      finalBuilderForPrint.append("\n");
+      finalBuilderForPrint.append(roles2).append(":").append("\n");
+      count = 0;
+      for (String textLine2 : textLines) {
 
-      for (String textLine : textLinesPool) {
         tempTextLinesBuilder.delete(0, tempTextLinesBuilder.length());
-        tempTextLinesBuilder.append(textLine.substring(0, textLine.indexOf(":")));
+        count++;
+        tempTextLinesBuilder.append(textLine2.substring(0, textLine2.indexOf(":")));
+
 
         if ((tempRolesBuilder.toString()).equals(tempTextLinesBuilder.toString())) {
-          count++;
-          finalBuilderForPrint.append(count).append(") ");
-          finalBuilderForPrint.append(textLine.substring(textLine.indexOf(":") + 1)).append("\n");
+          finalBuilderForPrint.append(count).append(")").append(textLine2.substring(textLine2.indexOf(":") + 1))
+                  .append("\n");
         }
       }
     }
-    System.out.println(finalBuilderForPrint);
+    return finalBuilderForPrint.toString();
   }
 
-  private static String mergeArrays(int[] firstArray, int[] secondArray) {
+  private static int[] mergeArrays(int[] firstArray, int[] secondArray) {
     int[] finalArray = new int[firstArray.length + secondArray.length];
     boolean isSorted = false;
     int flagIndexForFirstArray = 0;
@@ -78,6 +80,6 @@ public class Application {
         }
       }
     }
-    return Arrays.toString(finalArray);
+    return finalArray;
   }
 }
