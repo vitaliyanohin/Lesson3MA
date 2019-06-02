@@ -9,6 +9,47 @@ public class Robot {
     this.setDirection = direction;
   }
 
+  public static void moveRobot(Robot robot, int toX, int toY) {
+    int directionOnAxisX = toX - robot.getX();
+    int directionOnAxisY = toY - robot.getY();
+    while (robot.getDirection() != Direction.RIGHT) {
+      robot.turnRight();
+      if (robot.getDirection() == Direction.RIGHT) {
+        while (directionOnAxisX > 0) {
+          robot.stepForward();
+          directionOnAxisX--;
+        }
+      }
+    }
+    while (robot.getDirection() != Direction.LEFT) {
+      robot.turnRight();
+      if (robot.getDirection() == Direction.LEFT) {
+        while (directionOnAxisX < 0) {
+          robot.stepForward();
+          directionOnAxisX++;
+        }
+      }
+    }
+    while (robot.getDirection() != Direction.UP) {
+      robot.turnLeft();
+      if (robot.getDirection() == Direction.UP) {
+        while (directionOnAxisY > 0) {
+          robot.stepForward();
+          directionOnAxisY--;
+        }
+      }
+    }
+    while (robot.getDirection() != Direction.DOWN) {
+      robot.turnLeft();
+      if (robot.getDirection() == Direction.DOWN) {
+        while (directionOnAxisY < 0) {
+          robot.stepForward();
+          directionOnAxisY++;
+        }
+      }
+    }
+  }
+
   private Direction getDirection() {
     return setDirection;
   }
@@ -52,47 +93,6 @@ public class Robot {
       case LEFT:
         setDirection = Direction.UP;
         break;
-    }
-  }
-
-  public static void moveRobot(Robot robot, int toX, int toY) {
-    int directionOnAxisX = toX - robot.getX();
-    int directionOnAxisY = toY - robot.getY();
-    while (robot.getDirection() != Direction.RIGHT) {
-      robot.turnRight();
-      if (robot.getDirection() == Direction.RIGHT) {
-        while (directionOnAxisX > 0) {
-          robot.stepForward();
-          directionOnAxisX--;
-        }
-      }
-    }
-    while (robot.getDirection() != Direction.LEFT) {
-      robot.turnRight();
-      if (robot.getDirection() == Direction.LEFT) {
-        while (directionOnAxisX < 0) {
-          robot.stepForward();
-          directionOnAxisX++;
-        }
-      }
-    }
-    while (robot.getDirection() != Direction.UP) {
-      robot.turnLeft();
-      if (robot.getDirection() == Direction.UP) {
-        while (directionOnAxisY > 0) {
-          robot.stepForward();
-          directionOnAxisY--;
-        }
-      }
-    }
-    while (robot.getDirection() != Direction.DOWN) {
-      robot.turnLeft();
-      if (robot.getDirection() == Direction.DOWN) {
-        while (directionOnAxisY < 0) {
-          robot.stepForward();
-          directionOnAxisY++;
-        }
-      }
     }
   }
 
