@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 public class ComplexNumber {
   private final double re;
   private final double im;
@@ -10,15 +8,18 @@ public class ComplexNumber {
   }
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || this.getClass() != o.getClass()) return false;
-    ComplexNumber that = (ComplexNumber) o;
-    return Double.compare(that.re, re) == 0 && Double.compare(that.im, im) == 0;
+  public boolean equals(Object object) {
+    ComplexNumber complexNumberObj = (ComplexNumber) object;
+    if (object == null) return false;
+    if (this == object) return true;
+    if (this.re == complexNumberObj.re & this.im == complexNumberObj.im) return true;
+    return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(re, im);
+    double result;
+    result = 31 * (re * 1000) + 31 * (im * 1000);
+    return (int) result;
   }
 }

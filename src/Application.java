@@ -3,12 +3,23 @@ import java.util.Arrays;
 public class Application {
 
   public static void main(String[] args) {
-    Robot robot = new Robot(2, 2, Robot.Direction.UP);
-    robot.moveRobot(robot, 4, -2);
+    Robot robot = new Robot(0, 0, Direction.UP);
+    robot.moveRobot(robot, -2, -2);
     System.out.println("Next:");
     ComplexNumber numberA = new ComplexNumber(2.2, 2.2);
     ComplexNumber numberB = new ComplexNumber(2.2, 2.2);
     System.out.println(numberA.equals(numberB));
+    System.out.println(numberA.hashCode());
+    ComplexNumber numberC = new ComplexNumber(2.2, 2.2);
+    ComplexNumber numberD = new ComplexNumber(2.2, 2.19);
+    System.out.println(numberC.equals(numberD));
+    System.out.println(numberD.hashCode());
+    ComplexNumber numberE = new ComplexNumber(2.1, 2.2);
+    ComplexNumber numberF = new ComplexNumber(2.2, 2.2);
+    System.out.println(numberE.equals(numberF));
+    ComplexNumber numberG = new ComplexNumber(2.2, 2.1);
+    ComplexNumber numberH = new ComplexNumber(2.2, 2.2);
+    System.out.println(numberG.equals(numberH));
     System.out.println("Next:");
     String[] rolesPool = {"Городничий", "Аммос Федорович", "Артемий Филиппович", "Лука Лукич"};
     String[] textLinesPool = {
@@ -44,8 +55,7 @@ public class Application {
 
 
         if ((tempRolesBuilder.toString()).equals(tempTextLinesBuilder.toString())) {
-          finalBuilderForPrint.append(count).append(")").append(textLine2.substring(textLine2.indexOf(":") + 1))
-                  .append("\n");
+          finalBuilderForPrint.append(count).append(")").append(textLine2.substring(textLine2.indexOf(":") + 1)).append("\n");
         }
       }
     }
