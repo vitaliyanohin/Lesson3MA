@@ -55,7 +55,8 @@ public class Application {
 
 
         if ((tempRolesBuilder.toString()).equals(tempTextLinesBuilder.toString())) {
-          finalBuilderForPrint.append(count).append(")").append(textLine2.substring(textLine2.indexOf(":") + 1)).append("\n");
+          finalBuilderForPrint.append(count).append(")")
+                  .append(textLine2.substring(textLine2.indexOf(":") + 1)).append("\n");
         }
       }
     }

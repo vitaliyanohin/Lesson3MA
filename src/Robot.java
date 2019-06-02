@@ -99,19 +99,23 @@ public class Robot {
   private void stepForward() {
     if (getDirection().equals(Direction.RIGHT)) {
       startingPositionOnAxisX++;
-      System.out.println("я двигаюсь! По направению: " + getDirection() + " Ось X  " + startingPositionOnAxisX);
+      System.out.println("я двигаюсь! По направению: " + getDirection() + " Ось X  "
+              + startingPositionOnAxisX);
     }
     if (getDirection().equals(Direction.LEFT)) {
       startingPositionOnAxisX--;
-      System.out.println("я двигаюсь! По направению: " + getDirection() + " Ось X  " + startingPositionOnAxisX);
+      System.out.println("я двигаюсь! По направению: " + getDirection() + " Ось X  "
+              + startingPositionOnAxisX);
     }
     if (getDirection().equals(Direction.UP)) {
       startingPositionOnAxisY++;
-      System.out.println("я двигаюсь! По направению: " + getDirection() + " Ось Y  " + startingPositionOnAxisY);
+      System.out.println("я двигаюсь! По направению: " + getDirection() + " Ось Y  "
+              + startingPositionOnAxisY);
     }
     if (getDirection().equals(Direction.DOWN)) {
       startingPositionOnAxisY--;
-      System.out.println("я двигаюсь! По направению: " + getDirection() + " Ось Y  " + startingPositionOnAxisY);
+      System.out.println("я двигаюсь! По направению: " + getDirection() + " Ось Y  "
+              + startingPositionOnAxisY);
     }
   }
 }
