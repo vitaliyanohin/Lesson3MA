@@ -22,45 +22,22 @@ public class Application {
     System.out.println(numberG.equals(numberH));
     System.out.println("Next:");
     String[] rolesPool = {"Городничий", "Аммос Федорович", "Артемий Филиппович", "Лука Лукич"};
-    String[] textLinesPool = {
-            "Городничий: Я пригласил вас, господа, с тем, чтобы сообщить вам пренеприятное известие: к нам едет ревизор.",
-            "Аммос Федорович: Как Аммос Федорович ревизор?",
-            "Артемий Филиппович: Как Артемий Филиппович: ревизор?",
-            "Городничий: Ревизор из Петербурга, инкогнито. И еще с секретным предписаньем.",
-            "Аммос Федорович: Вот те на!",
-            "Артемий Филиппович: Вот не было заботы, так подай!",
-            "Лука Лукич: Господи боже! еще и с секретным предписаньем!"
-    };
+    String[] textLinesPool = {"Городничий: Я пригласил вас, господа, с тем, чтобы сообщить вам пренеприятное известие: к нам едет ревизор.", "Аммос Федорович: Как Аммос Федорович ревизор?", "Артемий Филиппович: Как Артемий Филиппович: ревизор?", "Городничий: Ревизор из Петербурга, инкогнито. И еще с секретным предписаньем.", "Аммос Федорович: Вот те на!", "Артемий Филиппович: Вот не было заботы, так подай!", "Лука Лукич: Господи боже! еще и с секретным предписаньем!"};
     System.out.println(printTextPerRole(rolesPool, textLinesPool));
     System.out.println("Next:");
     System.out.println(Arrays.toString(mergeArrays(new int[]{4, 6, 2}, new int[]{1, 3, 7, 5})));
   }
 
   private static String printTextPerRole(String[] roles, String[] textLines) {
-    int count;
-    StringBuilder tempRolesBuilder = new StringBuilder();
-    StringBuilder tempTextLinesBuilder = new StringBuilder();
-    StringBuilder finalBuilderForPrint = new StringBuilder();
-    for (String roles2 : roles) {
-      tempRolesBuilder.delete(0, tempRolesBuilder.length());
-      tempRolesBuilder.append(roles2);
-      finalBuilderForPrint.append("\n");
-      finalBuilderForPrint.append(roles2).append(":").append("\n");
-      count = 0;
-      for (String textLine2 : textLines) {
-
-        tempTextLinesBuilder.delete(0, tempTextLinesBuilder.length());
-        count++;
-        tempTextLinesBuilder.append(textLine2.substring(0, textLine2.indexOf(":")));
-
-
-        if ((tempRolesBuilder.toString()).equals(tempTextLinesBuilder.toString())) {
-          finalBuilderForPrint.append(count).append(")")
-                  .append(textLine2.substring(textLine2.indexOf(":") + 1)).append("\n");
-        }
-      }
+    StringBuilder result = new StringBuilder();
+    for (String role : roles) {
+      result.append(role).append(":\n");
+      for (int i = 0; i < textLines.length; ++i)
+        if (textLines[i].startsWith(role + ":"))
+          result.append(" ").append(i + 1).append(")").append(textLines[i].substring(role.length() + 1)).append("\n");
+      result.append("\n");
     }
-    return finalBuilderForPrint.toString();
+    return result.toString();
   }
 
   private static int[] mergeArrays(int[] firstArray, int[] secondArray) {
